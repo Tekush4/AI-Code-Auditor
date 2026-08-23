@@ -1,0 +1,22 @@
+{
+  "name": "ai-code-auditor",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Plataforma de auditoria automatizada de código com segurança, arquitetura, performance, IA e relatórios.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "tsx backend/src/server.ts",
+    "test:security": "tsx --test security-tests/**/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0"
+  },
+  "dependencies": {
+    "tsx": "^4.20.3",
+    "typescript": "^5.9.2"
+  }
+}

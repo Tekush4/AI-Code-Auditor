@@ -1,0 +1,25 @@
+.git
+.github
+node_modules
+npm-debug.log*
+
+# Bancos de dados locais e workspace de análise — nunca vão para a imagem
+*.sqlite
+*.sqlite3
+workspace/
+
+# Segredos — nunca devem entrar na imagem
+.env
+.env.*
+!.env.example
+
+# Testes de segurança e docs não são necessários dentro do container
+security-tests
+docs
+
+# Metadados de build/CI/editor
+Dockerfile
+.dockerignore
+docker-compose.yml
+.vscode
+.DS_Store

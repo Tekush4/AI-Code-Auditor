@@ -1,0 +1,11 @@
+services:
+  auditor:
+    build: .
+    ports: ["3000:3000"]
+    volumes: ["aica-data:/data", "./workspace:/workspace:ro"]
+    read_only: true
+    tmpfs: [/tmp]
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: ["ALL"]
+volumes:
+  aica-data:
