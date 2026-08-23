@@ -7,14 +7,15 @@
 import { createServer as createHttpServer, type Server } from "node:http";
 import { randomUUID } from "node:crypto";
 import { Router, type RequestContext } from "./router.ts";
-import type { Database } from "../db/database.ts";
-import { UserRepository, SessionRepository, InvalidCredentialsError, DuplicateUserError } from "../auth/users.ts";
-import { AuditRepository, AuthorizationError } from "../db/repository.ts";
-import { RateLimiter } from "../auth/rateLimiter.ts";
-import { AnalysisPipeline } from "../analysis/pipeline.ts";
-import { AnalysisRepository } from "../analysis/repository.ts";
+import type { Database } from "./db/database.ts";
+import { UserRepository, SessionRepository, InvalidCredentialsError, DuplicateUserError } from "./auth/users.ts";
+import { AuditRepository, AuthorizationError } from "./db/repository.ts";
+import { RateLimiter } from "./auth/rateLimiter.ts";
+import { AnalysisPipeline } from "./analysis/pipeline.ts";
+import { AnalysisRepository } from "./analysis/repository.ts";
 import path from "node:path";
 import { readFileSync } from "node:fs";
+
 
 const MAX_BODY_BYTES = 1_000_000; // 1MB — protege contra payload abuse (seção 18 do prompt)
 
